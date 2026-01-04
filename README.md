@@ -164,3 +164,18 @@ Run the SQL scripts in the `sql/` directory:
 ## 4. Analytics & Insights
 
 The curated BigQuery table supports several meaningful analyses as specified in the EV_Charging_Port_-_Central_London.pdf dashboard.
+Few key findings and insights from the analysis are as below.
+
+1: Central London has high charger availability, but speed is a bottleneck
+
+Although over 50% of charging points are operational, a large proportion of chargers fall into the “slow” or “unknown speed” categories, while rapid and fast chargers form a much smaller share that indicates that infrastructure availability has grown faster than infrastructure quality. For urban areas like Central London the requirement could be for quick top ups rather than overnight charging and the lack of rapid chargers could limit EV adoption.
+
+2: Market concentration among a few operators
+
+The data shows that a small number of operators control a significant share of charging points in Central London.
+
+3: Data quality issues 
+
+A high percentage of charging points are marked as “unknown” in both status accounting for over 40% of records and this can negatively impact EV route planning apps, Consumer trust and City-level transport planning. Improving data completeness may be as impactful as installing new chargers.
+
+An important data quality issue identified in the analysis is the lack of standardization in categorical fields, particularly the charging point status, where semantically identical values such as “unknown” and “Unknown” are treated as separate categories. This type of inconsistencies leads to inaccurate aggregations, misleading visualizations, and reduced reliability of analytical insights. Such issues can be effectively addressed at the ETL transformation stage by applying categorical normalization techniques, including case standardization, controlled value mappings, and validation rules. Addressing this during ETL ensures cleaner, more consistent datasets, reduces downstream data cleansing effort in BI tools, and improves the overall robustness of analytics and decision-making.
